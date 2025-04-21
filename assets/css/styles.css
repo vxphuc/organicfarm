@@ -1,0 +1,302 @@
+/* Reset & cấu hình chung */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+.main-container{
+    width: 90%;
+    margin: 0 auto;
+}
+.mainimg-slider {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .slide-track {
+    display: flex;
+    animation: slideBanner 6s infinite;
+  }
+  
+  .slide-track img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    flex-shrink: 0; /* ✨ GIỮ KÍCH THƯỚC ẢNH KHÔNG CO */
+  }
+  
+  @keyframes slideBanner {
+    0% { transform: translateX(0); }
+    45% { transform: translateX(0); }
+    50% { transform: translateX(-100%); }
+    95% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+  }
+  .image-wrapper img,
+.image-wrapper1 img {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  object-fit: cover;
+  top: -22%;
+  left: -22%;
+  opacity: 0;
+  animation: fadeImage 6s infinite;
+}
+
+.image-wrapper img:nth-child(1),
+.image-wrapper1 img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.image-wrapper img:nth-child(2),
+.image-wrapper1 img:nth-child(2) {
+  animation-delay: 3s;
+}
+
+@keyframes fadeImage {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  45% { opacity: 1; }
+  55% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Ảnh xoay khung vuông */
+.image-container, .image-container1 {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    transform: rotate(45deg);
+    position: absolute;
+    border: 10px solid #baffc4;
+}
+
+.image-container {
+    top: 10%;
+    left: 10%;
+}
+
+.image-container1 {
+    top: 50%;
+    left: 13.5%;
+}
+
+.image-wrapper, .image-wrapper1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: rotate(-45deg);
+}
+
+.image-wrapper img, .image-wrapper1 img {
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+    position: absolute;
+    top: -22%;
+    left: -22%;
+}
+
+.navbar{
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+.content{
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+/* Nút CTA */
+.cta-button {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #219150;
+}
+
+/* About section (ảnh phải - nội dung trái) */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f8f8;
+    margin: 60px 0;
+    gap: 40px;
+}
+
+.about-section img {
+    width: 55%;
+    height: 450px;
+    object-fit: cover;
+    float: right;
+}
+
+.about-section .container {
+    width: 50%;
+    text-align: center;
+}
+.about-section .container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: green;
+}
+
+/* Featured products */
+.featured-products .product-grid {
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    position: relative;
+}
+
+.product-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-item:hover {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Nút "Xem sản phẩm" căn giữa và nằm dưới */
+.buton-item {
+    display: inline-block;
+    margin: 30px auto 0;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #07ae20;
+    color: white;
+    font-weight: bold;
+    border: 2px solid #07ae20;
+    border-radius: 5px;
+    transition: 0.3s;
+    grid-column: 1 / -1; /* trải dài toàn hàng */
+    justify-self: center; /* căn giữa theo ô lưới */
+}
+.buton-item:hover {
+    background-color: #059c1c;
+    border-color: #059c1c;
+}
+/* Gallery */
+.gallery {
+    margin: 50px 0px;
+}
+.gallery .container {
+    background: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 60vh;
+    max-width: 600px;
+    height: auto;
+    border-radius: 5px;
+    float: left;
+    transition: transform 0.3s;
+    flex: 1;
+}
+
+.gallery-header {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+    padding-right: 100px;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Testimonials */
+.testimonials {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    margin: 60px 0;
+    gap: 40px;
+}
+.testimonials img {
+    width: 55%;
+    height: 450px;
+    object-fit: cover;
+    float: right;
+}
+.testimonials .container {
+    width: 50%;
+    text-align: center;
+}
+.testimonials .container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: green;
+}
+.testimonial-item blockquote {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.customer-name {
+    font-weight: bold;
+}
+
+/* CTA Section */
+
+.cta-section {
+    text-align: left;
+    padding: 60px;
+    background-color: #27ae60;
+    color: #fff;
+}
+.cta-section .cta-button{
+    text-decoration: none;
+    background-color: #fff;
+    color: #27ae60;
+    float: inline-start;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 50px;
+}
+.cta-section .container h2{
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.cta-section .container p{
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #fff;
+}
