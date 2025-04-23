@@ -29,7 +29,7 @@
   }
   header h1 {
     position: absolute;
-    top: 45%;
+    top: 22%;
     left: 70%;
     transform: translate(-50%, -50%);
     font-size: 48px;
@@ -56,3 +56,36 @@
     color: #333;
     padding: 5px;
   }
+.document-content{
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.document-content .document-item{
+    width: 24%;
+    height: auto;
+    padding: 10px;
+}
+.document-content .document-item img{
+    width: 100%;
+    height: auto;
+}
+.document-content .document-item h3{
+    font-size: 18px;
+    font-weight: bold;
+    color: #0bb319;
+    padding: 5px;
+    border-bottom: 2px solid #667266;
+}
+.document-content .document-item a{
+    text-decoration: none;
+}
+.document-content .document-item p{
+    font-size: 18px;
+    color: #000000;
+    padding: 5px;
+    border-bottom: 2px solid #667266;
+}
