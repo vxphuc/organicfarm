@@ -87,6 +87,7 @@
       gap: 40px;
       margin: 60px 0;
       flex-wrap: nowrap;
+      flex-direction: row-reverse;
   }
   
   .section.reverse {

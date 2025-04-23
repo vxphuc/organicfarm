@@ -7,3 +7,31 @@ body{
     font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
 }
+.title{
+    background-color: antiquewhite;
+    padding: 50px;
+}
+.title h1{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+.main-content{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.main-content .main{
+    width: 28%;
+    height: 100%;
+    margin: 20px;
+}
+.main-content .main img{
+    width: 100%;
+    height: 75%;
+    border-radius: 10px;
+    
+}
