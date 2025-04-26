@@ -1,9 +1,15 @@
+// ====== Thêm base tag tự động ======
+const base = document.createElement('base');
+base.href = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost'
+  ? '/'
+  : '/organicfarm/';
+document.head.appendChild(base);
+
+// ====== Fetch header ======
 window.addEventListener("DOMContentLoaded", () => {
-  // Xác định basePath theo môi trường
   const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
   const basePath = isLocal ? "" : "/organicfarm";
 
-  // Fetch file header từ đường dẫn tuyệt đối theo basePath
   const headerPath = `${basePath}/components/header.html`;
 
   fetch(headerPath)
