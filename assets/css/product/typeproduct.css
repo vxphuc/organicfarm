@@ -19,7 +19,7 @@ header {
 header h1 {
   position: absolute;
   top: 45%;
-  left: 50%;
+  left: 70%;
   transform: translate(-50%, -50%);
   font-size: 40px;
   border-bottom: 3px solid white;
@@ -34,14 +34,14 @@ header h1 {
 
 /* Bộ lọc 25% */
 .filter-panel {
-  width: 25%;
+  width: 20%;
   border-right: 1px solid #ccc;
   padding: 20px;
 }
 
 /* Danh sách sản phẩm 75% */
 .product-list {
-  width: 75%;
+  width: 80%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;

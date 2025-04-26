@@ -175,6 +175,11 @@ body{
     transition: box-shadow 0.3s;
 }
 
+.product-item a{
+    text-decoration: none;
+    color: black;
+}
+
 .product-item img {
     width: 100%;
     height: auto;
