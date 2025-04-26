@@ -3,7 +3,7 @@ const checkboxes = document.querySelectorAll(".filter-panel input[type='checkbox
 
 function renderProducts(data) {
     listEl.innerHTML = data.map(p => `
-      <div class="product-item">
+      <div class="product-item" onclick="location.href='pages/product/detailproduct.html'">
         <img src="${p.image}" alt="${p.name}" />
         <h4>${p.name}</h4>
         <p>Mô tả ngắn sản phẩm...</p>

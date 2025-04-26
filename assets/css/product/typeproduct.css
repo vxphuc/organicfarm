@@ -74,3 +74,9 @@ header h1 {
 .product-item button:hover {
   background-color: #48d048;
 }
+.product-item {
+  cursor: pointer;
+}
+.product-item:hover {
+  background-color: #f0e9e9;
+}
