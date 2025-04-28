@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Xử lý hiện/ẩn nút khi cuộn
     window.addEventListener("scroll", function() {
-        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
             scrollTopBtn.style.display = "block";
         } else {
             scrollTopBtn.style.display = "none";
