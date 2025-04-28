@@ -5,20 +5,25 @@ base.href = window.location.hostname === '127.0.0.1' || window.location.hostname
   : '/organicfarm/';
 document.head.appendChild(base);
 
-// ====== Fetch header ======
-window.addEventListener("DOMContentLoaded", () => {
+// ====== Fetch header sau khi DOM sẵn sàng ======
+window.addEventListener("DOMContentLoaded", async () => {
   const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
   const basePath = isLocal ? "" : "/organicfarm";
 
-  const headerPath = `${basePath}/components/header.html`;
-
-  fetch(headerPath)
-    .then(response => {
-      if (!response.ok) throw new Error(`Không thể tải header: ${response.status}`);
-      return response.text();
-    })
-    .then(data => {
-      document.getElementById("header-placeholder").innerHTML = data;
-    })
-    .catch(error => console.error("Lỗi khi tải header:", error));
+  try {
+    const headerResponse = await fetch(`${basePath}/components/header.html`);
+    if (!headerResponse.ok) {
+      throw new Error(`Không thể tải header: ${headerResponse.status}`);
+    }
+    const headerHtml = await headerResponse.text();
+    
+    const headerPlaceholder = document.getElementById("header-placeholder");
+    if (headerPlaceholder) {
+      headerPlaceholder.innerHTML = headerHtml;
+    } else {
+      console.error("Không tìm thấy phần tử #header-placeholder để chèn header!");
+    }
+  } catch (error) {
+    console.error("Lỗi khi tải header:", error);
+  }
 });
