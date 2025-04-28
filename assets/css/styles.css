@@ -22,7 +22,7 @@ body{
   
   .slide-track {
     display: flex;
-    animation: slideBanner 6s infinite;
+    animation: slideBanner 9s infinite;
   }
   
   .slide-track img {
@@ -30,15 +30,21 @@ body{
     height: 100vh;
     object-fit: cover;
     flex-shrink: 0; /* ✨ GIỮ KÍCH THƯỚC ẢNH KHÔNG CO */
+    clip-path: polygon(-5% 0%, 100% 0%, 100% 100%, 10% 100%);
   }
   
   @keyframes slideBanner {
     0% { transform: translateX(0); }
-    45% { transform: translateX(0); }
-    50% { transform: translateX(-100%); }
-    95% { transform: translateX(-100%); }
+    30% { transform: translateX(0); }
+
+    33% { transform: translateX(-100%); }
+    63% { transform: translateX(-100%); }
+
+    66% { transform: translateX(-200%); }
+    96% { transform: translateX(-200%); }
+
     100% { transform: translateX(0); }
-  }
+}
   .image-wrapper img,
 .image-wrapper1 img {
   position: absolute;

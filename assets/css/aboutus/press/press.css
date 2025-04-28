@@ -29,6 +29,10 @@ body{
     height: 100%;
     margin: 20px;
 }
+.main-content .main a{
+    text-decoration: none;
+    color: black;
+}
 .main-content .main img{
     width: 100%;
     height: 75%;

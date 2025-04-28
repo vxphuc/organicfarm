@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.detailpress-title{
+    font-style: italic;
+    color: #1eb11e;
+    margin: 20px;
+    text-align: center;
+}
+.detailpress-back{
+    margin: 20px;
+    text-align: center;
+}
+.detailpress-back a{
+    text-decoration: none;
+    color: #1eb11e;
+}
+.detailpress-content{
+    width: 70%;
+    margin: 0 auto;
+}
+.detailpress-main{
+    margin: 20px;
+}
+.detailpress-main img{
+    width: 100%;
+    height: 500px;
+    margin: 20px auto;
+}
+.detailpress-main p{
+    margin: 10px 0;
+    line-height: 1.5;
+}
