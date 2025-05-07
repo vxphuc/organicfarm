@@ -248,7 +248,16 @@ body{
     padding: 20px;
     padding-right: 100px;
 }
-
+.gallery-header h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: green;
+}
+.gallery-header .buton-item{
+  margin-bottom: 20px;
+  margin-top: 10px;
+  display: table;
+}
 .gallery-grid img:hover {
     transform: scale(1.05);
 }

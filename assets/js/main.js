@@ -27,15 +27,30 @@ window.addEventListener("DOMContentLoaded", async () => {
     console.error("Lỗi khi tải header:", error);
   }
 });
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.querySelector('.toggle-about');
-  const content = document.querySelector('.collapsible-content');
-  if (!btn || !content) return;
 
-  btn.addEventListener('click', () => {
+document.querySelectorAll('.collapsible-wrapper').forEach(wrapper => {
+  const button = wrapper.querySelector('.toggle-about');
+  const content = wrapper.querySelector('.collapsible-content');
+
+  button.addEventListener('click', () => {
     content.classList.toggle('expanded');
-    btn.textContent = content.classList.contains('expanded')
-      ? 'Thu gọn >>'
-      : 'Xem thêm >>';
+    button.textContent = content.classList.contains('expanded') ? 'Thu gọn <<' : 'Xem thêm >>';
   });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const featuredGrid = document.getElementById('featured-product-grid');
+  
+  // Lấy 3 sản phẩm mới nhất từ mảng products
+  const latestProducts = products.slice(-3).reverse();
+
+  // Hiển thị vào grid sản phẩm nổi bật
+  featuredGrid.innerHTML = latestProducts.map(product => `
+    <div class="product-item">
+      <a href="./pages/product/detailproduct.html">
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+      </a>
+    </div>
+  `).join('');
 });
