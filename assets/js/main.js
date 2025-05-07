@@ -27,3 +27,15 @@ window.addEventListener("DOMContentLoaded", async () => {
     console.error("Lỗi khi tải header:", error);
   }
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('.toggle-about');
+  const content = document.querySelector('.collapsible-content');
+  if (!btn || !content) return;
+
+  btn.addEventListener('click', () => {
+    content.classList.toggle('expanded');
+    btn.textContent = content.classList.contains('expanded')
+      ? 'Thu gọn >>'
+      : 'Xem thêm >>';
+  });
+});

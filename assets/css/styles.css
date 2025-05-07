@@ -392,3 +392,32 @@ body{
   .view-all:hover {
     background-color: #eeeeeebc;
   }
+  /* Ẩn tràn nội dung và tạo hiệu ứng */
+.collapsible-content {
+    max-height: 200px;      /* chiều cao tối đa khi chưa mở */
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  
+  /* Khi đã mở rộng (expanded) */
+  .collapsible-content.expanded {
+    max-height: 1000px;     /* hoặc dùng max-height: none; */
+  }
+  
+  /* Style cho nút Xem thêm / Thu gọn */
+  .toggle-about {
+    display: block;
+    margin: 0.5em auto 1em;
+    background: none;
+    border: none;
+    color: #08c20e;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  .about-section img{
+    width: 50%;
+    height: 500px;
+    object-fit: cover;
+    flex-shrink: 0; /* ✨ GIỮ KÍCH THƯỚC ẢNH KHÔNG CO */
+    clip-path: polygon(-5% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
