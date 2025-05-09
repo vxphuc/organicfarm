@@ -114,6 +114,7 @@ body{
     position: relative;
     text-align: center;
     color: #ffffff;
+    overflow: hidden; 
 }
 
 .content{
