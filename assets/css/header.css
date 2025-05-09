@@ -21,14 +21,23 @@
 .header222{
     background: #f1f1f1;
     width: 100%;
-    height: 7%;
-    float: left;
-    display: contents;
+    display: flex;           /* dùng flex để canh hàng */
+    align-items: center;     /* dọc căn giữa */
+    justify-content: space-between; /* logo bên trái, menu bên phải */
+    padding: 5px 20px;       /* chỉnh khoảng cách trong */
+    box-sizing: border-box;
 }
-.header222 .menu ul{
+.header222 .logo-link img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+.header222 .menu ul {
+    display: flex;
+    gap: 30px;       /* khoảng cách giữa các mục */
     margin: 0;
-    list-style-type: none;
-    text-align: center;
+    padding: 0;
+    list-style: none;
 }
 .header222 .menu ul li{
     display: inline-block;
