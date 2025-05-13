@@ -162,7 +162,8 @@ body{
 
 .about-section .container {
     width: 50%;
-    text-align: center;
+    text-align: justify;
+    padding: 18px;
 }
 .about-section .container h2 {
     font-size: 1.8em;
@@ -245,6 +246,8 @@ body{
   flex: 0 0 50%;
   max-width: 50%;
   width: 50%;
+  text-align: justify;
+  padding: 18px;
 }
 .gallery-header h2 {
     font-size: 1.8em;
