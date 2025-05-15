@@ -10,7 +10,7 @@ body{
     color: #333;
 }
 .main-container{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 .mainimg-slider {
@@ -151,6 +151,7 @@ body{
     background-color: rgb(255 255 255);
     margin: 60px 0;
     gap: 40px;
+    padding-left: 50px;
 }
 
 .about-section img {
@@ -233,6 +234,7 @@ body{
     align-items: center;
     justify-content: space-between;
     gap: 40px;
+    padding-right: 50px;
 }
 
 .gallery-grid img {
