@@ -28,7 +28,6 @@ body{
   .slide-track img {
     width: 100%;
     height: 100vh;
-    object-fit: cover;
     flex-shrink: 0; /* ✨ GIỮ KÍCH THƯỚC ẢNH KHÔNG CO */
   }
   
@@ -126,7 +125,10 @@ body{
     gap: 20px;
 }
 .content h1{
-  color: rgb(255, 255, 255);
+  font-family: 'Playfair Display', serif;
+  color: #F4C861;         /* màu vàng óng */
+  line-height: 1.1;       /* cho chữ thoáng như gốc */
+  letter-spacing: 0.05em;
 }
 
 /* Nút CTA */
