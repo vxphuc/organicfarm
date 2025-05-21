@@ -231,7 +231,7 @@ body{
     margin: 50px 0px;
 }
 .gallery .container {
-    background: #f8f8f8;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -262,9 +262,6 @@ body{
   margin-bottom: 20px;
   margin-top: 10px;
   display: table;
-}
-.gallery-grid img:hover {
-    transform: scale(1.05);
 }
 
 /* Testimonials */
