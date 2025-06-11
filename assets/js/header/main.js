@@ -27,3 +27,22 @@ window.addEventListener("DOMContentLoaded", async () => {
     console.error("Lỗi khi tải header:", error);
   }
 });
+document.addEventListener('DOMContentLoaded', function() {
+    // Đợi header được render xong
+    setTimeout(function() {
+        const btn = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.header222 .menu');
+        if (btn && menu) {
+            btn.addEventListener('click', function() {
+                menu.classList.toggle('show');
+            });
+
+            // Đóng menu khi bấm ngoài menu (tùy chọn)
+            document.addEventListener('click', function(e) {
+                if (!menu.contains(e.target) && !btn.contains(e.target)) {
+                    menu.classList.remove('show');
+                }
+            });
+        }
+    }, 100); // delay một chút để chắc chắn header đã render xong
+});
