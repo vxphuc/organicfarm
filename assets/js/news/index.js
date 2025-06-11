@@ -16,7 +16,7 @@ const data = {
   render: (data) => {
     const main_content = document.querySelector(".main-content");
     console.log(data);
-    const news = data.news.map((news) => {
+    const news = news.news.map((news) => {
       return `
        <div class="main">
             <a href="pages/aboutus/press/detailpress.html">
