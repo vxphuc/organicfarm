@@ -137,7 +137,7 @@
     display: flex;
     justify-content: center;
     gap: 40px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     max-width: 1200px;
     margin: 0 auto 40px;
   }
@@ -235,6 +235,9 @@
   
     header h1 {
       font-size: 32px;
+    }
+    .endline-content {
+      flex-wrap: wrap;
     }
   }
   

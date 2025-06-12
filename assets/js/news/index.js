@@ -7,29 +7,36 @@ const data = {
         throw new Error(`Response status: ${response.status}`);
       }
       const data = await response.json();
+      console.log("Data fetched successfully:", data);
       return data;
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   },
 
-  render: (data) => {
+   render: (data) => {
     const main_content = document.querySelector(".main-content");
-    console.log(data);
-    const news = data.news.map((news) => {
+    if (!data || !Array.isArray(data.news)) {
+      main_content.innerHTML = "<p>Không có dữ liệu tin tức.</p>";
+      return;
+    }
+    const newsHtml = data.news.map((news) => {
+      // Lấy thumbnail, nếu không có thì dùng ảnh mặc định
+      const imgSrc = news.thumbnail || "assets/img/no-image.png";
       return `
        <div class="main">
-            <a href="pages/aboutus/press/detailpress.html">
-            <img src=${news.image[0]} alt="Mặt nạ nha đam" class="img">
+            <a href="pages/resources/detailnew.html?slug=${news.slug}">
+                <img src="${imgSrc}" alt="Ảnh tin tức" class="img">
                 <div class="text">
-                    <h2>${news.title}</h2>
-                    <p>${news.description}</p>
+                    <h3>${news.title || ""}</h3>
+                    <p>${news.description || ""}</p>
                 </div>
             </a>
         </div>
         `;
-    });
-    main_content.innerHTML = news;
+    }).join("");
+
+    main_content.innerHTML = newsHtml;
   },
 
   start: async () => {

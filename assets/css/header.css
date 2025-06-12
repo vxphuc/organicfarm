@@ -99,7 +99,7 @@
 .header222 .menu.show {
     display: block !important;
 }
-@media (max-width: 640px) {
+@media (max-width: 740px) {
     .header111 {
         display: none !important;
     }

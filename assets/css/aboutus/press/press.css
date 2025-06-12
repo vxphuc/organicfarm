@@ -37,6 +37,23 @@ body{
 .main-content .main img{
     width: 100%;
     height: 75%;
-    border-radius: 10px;
     
+}
+.text h3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.text p {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
 }
