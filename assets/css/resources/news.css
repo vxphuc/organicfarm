@@ -119,12 +119,12 @@
   font-size: 16px;
   border: 1px solid #0cc036;
   border-radius: 3px;
-  transition: all 0.1s ease-in-out 0.1s;
+  transition: all 0.2s ease-in-out 0.2s;
 }
 .new-more-btn:hover{
   background-color: #0cc036;
   color: white;
   border: 1px solid #0cc036;
-  border-radius: 10px;
+  border-radius: 30px;
   cursor: pointer;
 }
