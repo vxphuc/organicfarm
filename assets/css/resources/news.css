@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    text-align: justify;
   }
   body {
     width: 100%;
@@ -78,4 +79,34 @@
     height: 75%;
     border-radius: 10px;
     
+}
+.text h3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.text p {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+.new-btn{
+  padding: 5px 10px;
+  margin-top: 10px;
+  border: 1px solid #0cc036;
+  background-color: #fff;
+}
+.new-btn:hover{
+  background-color: #0cc036;
+  color: white;
+  border: 1px solid #0cc036;
+  border-radius: 5px;
 }

@@ -30,7 +30,9 @@ const data = {
                 <div class="text">
                     <h3>${news.title || ""}</h3>
                     <p>${news.description || ""}</p>
+                    <button class="new-btn">&gt;&gt; Xem chi tiết</button>
                 </div>
+                
             </a>
         </div>
         `;
