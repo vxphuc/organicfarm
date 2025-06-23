@@ -26,7 +26,7 @@
     display: flex;           /* dùng flex để canh hàng */
     align-items: center;     /* dọc căn giữa */
     justify-content: space-between; /* logo bên trái, menu bên phải */
-    padding: 5px 20px;       /* chỉnh khoảng cách trong */
+    padding: 5px 30px;       /* chỉnh khoảng cách trong */
     box-sizing: border-box;
 }
 .header222 .logo-link img {
