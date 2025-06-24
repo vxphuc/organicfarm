@@ -248,8 +248,15 @@ body{
     font-size: 1.8em;
     margin-bottom: 20px;
     color: green;
+    
 }
-
+.about-section .container h3 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: green;
+    margin-left: 9%;
+    margin-top: -20px;
+}
 /* Featured products */
 .featured-products .product-grid {
     display: grid;
@@ -529,6 +536,22 @@ body{
   padding: 15px;
   border-left: 4px solid #109d1b;
   border-radius: 4px;
+}
+.tab-content {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.tab-content.fade-out {
+  opacity: 0;
+}
+#tab-image {
+  transition: opacity 0.4s ease-in-out;
+  opacity: 1;
+}
+
+#tab-image.fade-out {
+  opacity: 0;
 }
   @media (max-width: 740px) {
     .tabs{

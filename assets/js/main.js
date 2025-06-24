@@ -80,19 +80,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
   tabButtons.forEach(button => {
     button.addEventListener("click", () => {
-      const target = button.getAttribute("data-tab");
-      const imageSrc = button.getAttribute("data-img");
+      const targetId = button.getAttribute("data-tab");
+      const newImage = button.getAttribute("data-img");
 
       tabButtons.forEach(btn => btn.classList.remove("active"));
       button.classList.add("active");
 
       tabContents.forEach(content => {
-        content.style.display = content.id === target ? "block" : "none";
+        if (content.style.display !== "none") {
+          content.classList.add("fade-out");
+          setTimeout(() => {
+            content.style.display = "none";
+            content.classList.remove("fade-out");
+          }, 300);
+        }
       });
 
-      // Đổi ảnh
-      if (tabImage && imageSrc) {
-        tabImage.setAttribute("src", imageSrc);
+      const targetContent = document.getElementById(targetId);
+      setTimeout(() => {
+        targetContent.style.display = "block";
+        targetContent.classList.add("fade-out");
+        setTimeout(() => {
+          targetContent.classList.remove("fade-out");
+        }, 50);
+      }, 300);
+
+      if (tabImage && newImage) {
+        tabImage.classList.add("fade-out");
+
+        setTimeout(() => {
+          tabImage.setAttribute("src", newImage);
+          tabImage.classList.remove("fade-out");
+        }, 300);
       }
     });
   });
