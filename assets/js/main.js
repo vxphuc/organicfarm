@@ -73,3 +73,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, 100); // delay một chút để chắc chắn header đã render xong
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const tabContents = document.querySelectorAll(".tab-content");
+  const tabImage = document.getElementById("tab-image");
+
+  tabButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const target = button.getAttribute("data-tab");
+      const imageSrc = button.getAttribute("data-img");
+
+      tabButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      tabContents.forEach(content => {
+        content.style.display = content.id === target ? "block" : "none";
+      });
+
+      // Đổi ảnh
+      if (tabImage && imageSrc) {
+        tabImage.setAttribute("src", imageSrc);
+      }
+    });
+  });
+});

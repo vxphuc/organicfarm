@@ -19,7 +19,11 @@ body{
     height: 100vh;
     position: relative;
   }
-  
+  .about-section .container .about-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .slide-track {
     display: flex;
     animation: slideBanner 9s infinite;
@@ -182,7 +186,7 @@ body{
 .content h1 {
   font-family: 'Playfair Display', serif;
   font-size: 40px;
-  background: linear-gradient(90deg, #11e41f, #056d05);
+  background: linear-gradient(90deg, #39ff39, #fff82d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 12px 12px 16px rgba(0, 0, 0, 0.25);
@@ -501,7 +505,38 @@ body{
     flex-shrink: 0; /* ✨ GIỮ KÍCH THƯỚC ẢNH KHÔNG CO */
     clip-path: polygon(-5% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
+  .tabs {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.tab-btn {
+  padding: 10px 16px;
+  border: none;
+  background-color: #e0ffe0;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.tab-btn.active {
+  background-color: #109d1b;
+  color: white;
+}
+.tab-content {
+  margin-top: 15px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-left: 4px solid #109d1b;
+  border-radius: 4px;
+}
   @media (max-width: 740px) {
+    .tabs{
+      width: 100%;
+    }
+    .tab-btn{
+      width: 100%;
+    }
     .content-buttons {
     flex-direction: column; /* Trên điện thoại thì xếp theo cột */
     align-items: center;
@@ -525,7 +560,7 @@ body{
   .about-section {
     flex-direction: column !important;
     align-items: flex-start !important;
-    padding-left: 10px;
+    padding-left: 0px;
     gap: 20px;
   }
   .about-section img {
@@ -535,7 +570,7 @@ body{
   }
   .about-section .container {
     width: 100% !important;
-    padding: 8px;
+    padding: 10px;
   }
 
   /* Gallery Section */
@@ -543,13 +578,16 @@ body{
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 20px;
-    padding-right: 10px;
+    padding-right: 0px;
   }
   .gallery-header,
   .gallery-grid {
     max-width: 100% !important;
     width: 100% !important;
     padding: 0;
+  }
+  .gallery-header{
+    padding: 10px;
   }
   /* Testimonials */
   .testimonials {
