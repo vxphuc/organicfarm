@@ -553,6 +553,17 @@ body{
 #tab-image.fade-out {
   opacity: 0;
 }
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
   @media (max-width: 740px) {
     .tabs{
       width: 100%;
