@@ -425,6 +425,7 @@ body{
   }
   
   .resource-box {
+    display: grid;
     background-color: #fff;
     color: #333;
     padding: 30px 25px;
@@ -564,6 +565,74 @@ body{
   opacity: 1;
   transform: none;
 }
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+.main a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.main img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.main .text {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main .text h2 {
+  font-size: 1.2em;
+  margin: 0 0 10px;
+  min-height: 3em; /* Đảm bảo cùng chiều cao */
+}
+
+.main .text p {
+  flex: 1;
+  font-size: 0.95em;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.main .text::after {
+  content: "";
+  display: block;
+  height: 40px; /* dành chỗ cho nút */
+}
+
+.main .text button {
+  margin-top: auto;
+  align-self: center;
+  padding: 8px 16px;
+  background-color: #07ae20;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
   @media (max-width: 740px) {
     .tabs{
       width: 100%;
