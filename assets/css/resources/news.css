@@ -152,3 +152,25 @@
   border-radius: 30px;
   cursor: pointer;
 }
+@media (max-width: 850px) {
+  .main-content {
+    justify-content: space-between;
+  }
+
+  .main-content .main {
+    width: 48%; /* 2 tin mỗi hàng, có khoảng cách */
+    margin-bottom: 20px;
+  }
+}
+
+/* Dưới 400px: 1 tin tức mỗi hàng */
+@media (max-width: 400px) {
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-content .main {
+    width: 100%;
+  }
+}

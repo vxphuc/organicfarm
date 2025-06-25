@@ -83,3 +83,29 @@ label {
   display: inline-block;
   margin-bottom: 4px;
 }
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .main-content{
+    width: 90%;
+  }
+  .main-content h1{
+    font-size: 1.1em;
+    text-align: center;
+  }
+  .contact-container,
+  .contact-form-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .map iframe {
+    height: 50vh; /* Tùy chỉnh lại chiều cao map nếu cần */
+  }
+
+  .contact-form-container .message {
+    width: 100%; /* Nút gửi full chiều ngang nếu cần */
+  }
+}
