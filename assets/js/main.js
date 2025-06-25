@@ -19,10 +19,24 @@ window.addEventListener("DOMContentLoaded", async () => {
     
     const headerPlaceholder = document.getElementById("header-placeholder");
     if (headerPlaceholder) {
-      headerPlaceholder.innerHTML = headerHtml;
-    } else {
-      console.error("Không tìm thấy phần tử #header-placeholder để chèn header!");
-    }
+  headerPlaceholder.innerHTML = headerHtml;
+
+  // Sau khi header đã được gán xong, mới gắn sự kiện
+  const btn = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.header222 .menu');
+
+  if (btn && menu) {
+    btn.addEventListener('click', function () {
+      menu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  }
+}
   } catch (error) {
     console.error("Lỗi khi tải header:", error);
   }
