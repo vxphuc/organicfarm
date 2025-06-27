@@ -61,10 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // Hiển thị vào grid sản phẩm nổi bật
   featuredGrid.innerHTML = latestProducts.map(product => `
     <div class="product-item">
-      <a href="./pages/product/detailproduct.html">
         <img src="${product.image}" alt="${product.name}">
         <h3>${product.name}</h3>
-      </a>
     </div>
   `).join('');
 });
