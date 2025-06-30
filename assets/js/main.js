@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   const basePath = isLocal ? "" : "/organicfarm";
 
   try {
-    const headerResponse = await fetch(`${basePath}/components/header.html`);
+    const headerResponse = await fetch(`/components/header.html`);
     if (!headerResponse.ok) {
       throw new Error(`Không thể tải header: ${headerResponse.status}`);
     }
