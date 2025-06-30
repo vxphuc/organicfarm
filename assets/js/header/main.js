@@ -1,72 +1,46 @@
+// ====== Thêm base tag tự động ======
+const base = document.createElement('base');
+base.href = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost'
+  ? '/'
+  : '/organicfarm/';
+document.head.appendChild(base);
 
-let basePath = "";
-if (window.location.hostname.includes("github.io")) {
-  basePath = "/organicfarm";
-}
-
-function adjustHeaderRelativePaths(container, depth) {
-  const prefix = "../".repeat(depth);
-
-  container.querySelectorAll("img[src], a[href]").forEach(el => {
-    if (el.tagName === "IMG") {
-      const src = el.getAttribute("src");
-      if (src && !src.startsWith("http") && !src.startsWith("/") && !src.startsWith(basePath)) {
-        el.src = prefix + src;
-      }
-    }
-
-    if (el.tagName === "A") {
-      const href = el.getAttribute("href");
-      if (
-        href &&
-        !href.startsWith("http") &&
-        !href.startsWith("/") &&
-        !href.startsWith("#") &&
-        !href.startsWith(basePath)
-      ) {
-        el.href = prefix + href;
-      }
-    }
-  });
-}
-
+// ====== Fetch header sau khi DOM sẵn sàng ======
 window.addEventListener("DOMContentLoaded", async () => {
+  const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
+  const basePath = isLocal ? "" : "/organicfarm";
+
   try {
     const headerResponse = await fetch(`${basePath}/components/header.html`);
-    let headerHtml = await headerResponse.text();
-
+    if (!headerResponse.ok) {
+      throw new Error(`Không thể tải header: ${headerResponse.status}`);
+    }
+    const headerHtml = await headerResponse.text();
+    
     const headerPlaceholder = document.getElementById("header-placeholder");
     if (headerPlaceholder) {
-      headerPlaceholder.innerHTML = headerHtml;
+  headerPlaceholder.innerHTML = headerHtml;
 
-      // Tính độ sâu trang để thêm ../ cho ảnh/link trong header
-      const pathDepth = location.pathname
-        .replace(/\\/g, "/")
-        .replace(/^\//, "")
-        .split("/")
-        .filter(p => p && !p.endsWith(".html")).length;
+  // Sau khi header đã được gán xong, mới gắn sự kiện
+  const btn = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.header222 .menu');
 
-      adjustHeaderRelativePaths(headerPlaceholder, pathDepth);
+  if (btn && menu) {
+    btn.addEventListener('click', function () {
+      menu.classList.toggle('show');
+    });
 
-      const btn = document.querySelector('.menu-toggle');
-      const menu = document.querySelector('.header222 .menu');
-      if (btn && menu) {
-        btn.addEventListener('click', () => {
-          menu.classList.toggle('show');
-        });
-        document.addEventListener('click', function (e) {
-          if (!menu.contains(e.target) && !btn.contains(e.target)) {
-            menu.classList.remove('show');
-          }
-        });
+    document.addEventListener('click', function (e) {
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.classList.remove('show');
       }
-    }
+    });
+  }
+}
   } catch (error) {
     console.error("Lỗi khi tải header:", error);
   }
 });
-
-
 document.addEventListener('DOMContentLoaded', function() {
     // Đợi header được render xong
     setTimeout(function() {
