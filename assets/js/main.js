@@ -8,8 +8,7 @@ document.head.appendChild(base);
 // ====== Fetch header sau khi DOM sẵn sàng ======
 window.addEventListener("DOMContentLoaded", async () => {
   const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
-  const isGithub = window.location.hostname.includes('github.io');
-  const basePath = isGithub ? '/organicfarm' : '';
+  const basePath = isLocal ? "" : "/organicfarm";
 
   try {
     const headerResponse = await fetch(`${basePath}/components/header.html`);
