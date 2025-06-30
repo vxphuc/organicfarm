@@ -8,10 +8,11 @@ document.head.appendChild(base);
 // ====== Fetch header sau khi DOM sẵn sàng ======
 window.addEventListener("DOMContentLoaded", async () => {
   const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
-  const basePath = isLocal ? "" : "/organicfarm";
+  const isGithub = window.location.hostname.includes('github.io');
+  const basePath = isGithub ? '/organicfarm' : '';
 
   try {
-    const headerResponse = await fetch(`/components/header.html`);
+    const headerResponse = await fetch(`${basePath}/components/header.html`);
     if (!headerResponse.ok) {
       throw new Error(`Không thể tải header: ${headerResponse.status}`);
     }
