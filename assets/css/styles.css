@@ -632,6 +632,9 @@ body{
   border-radius: 5px;
   cursor: pointer;
 }
+.img-mobile {
+  display: none;
+}
 
   @media (max-width: 740px) {
     .tabs{
@@ -671,6 +674,16 @@ body{
     height: auto !important;
     margin-top: 12px;
   }
+  .img-desktop {
+    display: none;
+  }
+  .img-mobile {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-top: 12px;
+  }
   .about-section .container {
     width: 100% !important;
     padding: 10px;
@@ -678,7 +691,7 @@ body{
 
   /* Gallery Section */
   .gallery .container {
-    flex-direction: column !important;
+    flex-direction: column-reverse !important;
     align-items: flex-start !important;
     gap: 20px;
     padding-right: 0px;
