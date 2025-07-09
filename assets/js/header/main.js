@@ -1,35 +1,28 @@
-// ====== Thêm base tag tự động ======
-const base = document.createElement('base');
-base.href = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost'
-  ? '/'
-  : '/organicfarm/';
-document.head.appendChild(base);
+// ====== Xác định basePath dựa vào cấp thư mục ======
+let basePath = "";
 
-// ====== Fetch header sau khi DOM sẵn sàng ======
-window.addEventListener("DOMContentLoaded", async () => {
-  const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
-  const basePath = isLocal ? "" : "/organicfarm";
+if (window.location.hostname.includes("github.io")) {
+  basePath = "/organicfarm/";
+} else {
+  const currentPath = window.location.pathname;
+  const isInPages = currentPath.includes("/pages/");
+  if (isInPages) {
+    const afterPages = currentPath.split("/pages/")[1];
+    const folderDepth = afterPages.split("/").length - 1;
+    basePath = "../".repeat(folderDepth + 1);
+  } else {
+    basePath = "./";
+  }
+}
 
-  try {
-    const headerResponse = await fetch(`${basePath}/components/header.html`);
-    if (!headerResponse.ok) {
-      throw new Error(`Không thể tải header: ${headerResponse.status}`);
-    }
-    const headerHtml = await headerResponse.text();
-    
-    const headerPlaceholder = document.getElementById("header-placeholder");
-    if (headerPlaceholder) {
-  headerPlaceholder.innerHTML = headerHtml;
-
-  // Sau khi header đã được gán xong, mới gắn sự kiện
+// ====== Gắn toggle menu sau khi header render xong ======
+function initMobileMenuToggle() {
   const btn = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.header222 .menu');
-
   if (btn && menu) {
     btn.addEventListener('click', function () {
       menu.classList.toggle('show');
     });
-
     document.addEventListener('click', function (e) {
       if (!menu.contains(e.target) && !btn.contains(e.target)) {
         menu.classList.remove('show');
@@ -37,26 +30,42 @@ window.addEventListener("DOMContentLoaded", async () => {
     });
   }
 }
+
+// ====== Load header.html và xử lý menu/logo/link ======
+window.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const headerResponse = await fetch(`${basePath}components/header.html`);
+    if (!headerResponse.ok) throw new Error(`Không thể tải header: ${headerResponse.status}`);
+    
+    const headerHtml = await headerResponse.text();
+    const headerPlaceholder = document.getElementById("header-placeholder");
+
+    if (headerPlaceholder) {
+      headerPlaceholder.innerHTML = headerHtml;
+
+      // ✅ Sửa đường dẫn logo (nếu là tương đối)
+      const logo = headerPlaceholder.querySelector('.logo-link img');
+      if (logo) {
+        const rawSrc = logo.getAttribute('src');
+        if (rawSrc && !rawSrc.startsWith('http') && !rawSrc.startsWith('/')) {
+          const prefix = basePath.endsWith('/') ? basePath : `${basePath}/`;
+          logo.setAttribute('src', prefix + rawSrc);
+        }
+      }
+
+      // ✅ Sửa tất cả <a href="..."> trong header thành đúng path
+      const links = headerPlaceholder.querySelectorAll('a[href]');
+      links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('http') && !href.startsWith('/') && !href.startsWith('#')) {
+          link.setAttribute('href', `${basePath}${href}`.replace(/\/{2,}/g, '/'));
+        }
+      });
+      
+      // ✅ Gắn sự kiện menu toggle
+      initMobileMenuToggle();
+    }
   } catch (error) {
     console.error("Lỗi khi tải header:", error);
   }
-});
-document.addEventListener('DOMContentLoaded', function() {
-    // Đợi header được render xong
-    setTimeout(function() {
-        const btn = document.querySelector('.menu-toggle');
-        const menu = document.querySelector('.header222 .menu');
-        if (btn && menu) {
-            btn.addEventListener('click', function() {
-                menu.classList.toggle('show');
-            });
-
-            // Đóng menu khi bấm ngoài menu (tùy chọn)
-            document.addEventListener('click', function(e) {
-                if (!menu.contains(e.target) && !btn.contains(e.target)) {
-                    menu.classList.remove('show');
-                }
-            });
-        }
-    }, 100); // delay một chút để chắc chắn header đã render xong
 });
