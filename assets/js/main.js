@@ -1,14 +1,33 @@
-// ====== Thêm base tag tự động ======
-
-// ====== Fetch header sau khi DOM sẵn sàng ======
+// ====== Xác định basePath phù hợp ======
 let basePath = "";
+const pathname = window.location.pathname;
+
 if (window.location.hostname.includes("github.io")) {
   basePath = "/organicfarm";
+} else if (pathname.includes("/organicfarm")) {
+  basePath = "/organicfarm";
 } else {
-  basePath = ""; // Netlify hoặc localhost
+  basePath = "."; // fallback khi chạy local
 }
 
-// ====== Fetch header sau khi DOM sẵn sàng ======
+// ====== Gắn sự kiện toggle menu mobile ======
+function initMobileMenuToggle() {
+  const btn = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.header222 .menu');
+  if (btn && menu) {
+    btn.addEventListener('click', function () {
+      menu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  }
+}
+
+// ====== Fetch header khi DOM sẵn sàng ======
 window.addEventListener("DOMContentLoaded", async () => {
   try {
     const headerResponse = await fetch(`${basePath}/components/header.html`);
@@ -21,68 +40,44 @@ window.addEventListener("DOMContentLoaded", async () => {
     if (headerPlaceholder) {
       headerPlaceholder.innerHTML = headerHtml;
 
-      const btn = document.querySelector('.menu-toggle');
-      const menu = document.querySelector('.header222 .menu');
-      if (btn && menu) {
-        btn.addEventListener('click', function () {
-          menu.classList.toggle('show');
-        });
-        document.addEventListener('click', function (e) {
-          if (!menu.contains(e.target) && !btn.contains(e.target)) {
-            menu.classList.remove('show');
-          }
-        });
-      }
+      // Gắn sự kiện menu toggle sau khi header đã render
+      initMobileMenuToggle();
     }
   } catch (error) {
     console.error("Lỗi khi tải header:", error);
   }
 });
 
+// ====== Toggle "Xem thêm" trong phần giới thiệu ======
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.collapsible-wrapper').forEach(wrapper => {
+    const button = wrapper.querySelector('.toggle-about');
+    const content = wrapper.querySelector('.collapsible-content');
 
-document.querySelectorAll('.collapsible-wrapper').forEach(wrapper => {
-  const button = wrapper.querySelector('.toggle-about');
-  const content = wrapper.querySelector('.collapsible-content');
-
-  button.addEventListener('click', () => {
-    content.classList.toggle('expanded');
-    button.textContent = content.classList.contains('expanded') ? 'Thu gọn <<' : 'Xem thêm >>';
+    if (button && content) {
+      button.addEventListener('click', () => {
+        content.classList.toggle('expanded');
+        button.textContent = content.classList.contains('expanded') ? 'Thu gọn <<' : 'Xem thêm >>';
+      });
+    }
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+// ====== Hiển thị sản phẩm nổi bật ======
+document.addEventListener('DOMContentLoaded', function () {
   const featuredGrid = document.getElementById('featured-product-grid');
-  
-  // Lấy 3 sản phẩm mới nhất từ mảng products
-  const latestProducts = products.slice(-3).reverse();
-
-  // Hiển thị vào grid sản phẩm nổi bật
-  featuredGrid.innerHTML = latestProducts.map(product => `
-    <div class="product-item">
+  if (typeof products !== 'undefined' && featuredGrid) {
+    const latestProducts = products.slice(-3).reverse();
+    featuredGrid.innerHTML = latestProducts.map(product => `
+      <div class="product-item">
         <img src="${product.image}" alt="${product.name}">
         <h3>${product.name}</h3>
-    </div>
-  `).join('');
+      </div>
+    `).join('');
+  }
 });
-document.addEventListener('DOMContentLoaded', function() {
-    // Đợi header được render xong
-    setTimeout(function() {
-        const btn = document.querySelector('.menu-toggle');
-        const menu = document.querySelector('.header222 .menu');
-        if (btn && menu) {
-            btn.addEventListener('click', function() {
-                menu.classList.toggle('show');
-            });
 
-            // Đóng menu khi bấm ngoài menu (tùy chọn)
-            document.addEventListener('click', function(e) {
-                if (!menu.contains(e.target) && !btn.contains(e.target)) {
-                    menu.classList.remove('show');
-                }
-            });
-        }
-    }, 100); // delay một chút để chắc chắn header đã render xong
-});
+// ====== Tabs chuyển đổi nội dung ======
 document.addEventListener("DOMContentLoaded", function () {
   const tabButtons = document.querySelectorAll(".tab-btn");
   const tabContents = document.querySelectorAll(".tab-content");
@@ -117,7 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (tabImage && newImage) {
         tabImage.classList.add("fade-out");
-
         setTimeout(() => {
           tabImage.setAttribute("src", newImage);
           tabImage.classList.remove("fade-out");
@@ -126,6 +120,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// ====== Scroll animation khi xuất hiện trong màn hình ======
 document.addEventListener("DOMContentLoaded", function () {
   const faders = document.querySelectorAll('.fade-in-section');
 
