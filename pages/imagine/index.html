@@ -50,7 +50,7 @@
                 <div class="product-grid" id="trunque-product-grid">
                 <!-- Sản phẩm trùn quế sẽ được render tại đây -->
                 </div>
-                <a class="buton-item" href="./pages/product/product.html">Xem Tất Cả Sản Phẩm Trùn Quế</a>
+                <a class="buton-item" id="view-all-products" href="#">Xem Tất Cả Sản Phẩm</a>
             </div>
         </section>
         <main class="section fade-in-section">
@@ -103,5 +103,19 @@
     <script src="assets/js/render/trunque.js"></script>
     <script src="../../assets/js/product/product-data.js"></script>
     <script src="../../assets/js/render/trunque.js"></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const link = document.getElementById("view-all-products");
+
+    if (!link) return;
+
+    const isGitHubPages = window.location.hostname === "vxphuc.github.io";
+    const correctHref = isGitHubPages
+      ? "../../pages/product/product.html"
+      : "/pages/product/product.html";
+
+    link.setAttribute("href", correctHref);
+  });
+</script>
 </body>
 </html>
