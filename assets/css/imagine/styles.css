@@ -227,7 +227,7 @@
 
 .trunque-products .product-item img {
   width: 100%;
-  height: auto;
+  height: 85%;
   border-radius: 6px;
   margin-bottom: 10px;
 }
@@ -247,6 +247,17 @@
 .trunque-products a.buton-item:hover {
   color: darkgreen;
   text-decoration: underline;
+}
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
 }
   @media screen and (max-width: 768px) {
       .section, .section.reverse {
