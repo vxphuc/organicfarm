@@ -104,18 +104,18 @@
     <script src="../../assets/js/product/product-data.js"></script>
     <script src="../../assets/js/render/trunque.js"></script>
     <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const link = document.getElementById("view-all-products");
+    document.addEventListener("DOMContentLoaded", function () {
+        const link = document.getElementById("view-all-products");
 
-    if (!link) return;
+        if (!link) return;
 
-    const isGitHubPages = window.location.hostname === "vxphuc.github.io";
-    const correctHref = isGitHubPages
-      ? "../../pages/product/product.html"
-      : "/pages/product/product.html";
+        const isGitHubPages = window.location.hostname === "vxphuc.github.io";
+        const correctHref = isGitHubPages
+        ? "../../pages/product/product.html"
+        : "/pages/product/product.html";
 
-    link.setAttribute("href", correctHref);
-  });
-</script>
+        link.setAttribute("href", correctHref);
+    });
+    </script>
 </body>
 </html>
