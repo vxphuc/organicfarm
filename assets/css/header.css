@@ -111,6 +111,9 @@
     z-index: 1000;
     min-width: 160px;
 }
+.header222 .menu ul li.has-submenu .arrow{
+    font-size: 0.8em;
+}
 @media (min-width: 769px) {
     .header222 .menu ul li.has-submenu:hover .submenu {
         display: block;
@@ -162,6 +165,7 @@
     .header222 .menu ul li.has-submenu .arrow {
         float: right;
         margin-left: 5px;
+        margin-top: 2px;
         font-size: 0.9em;
     }
 

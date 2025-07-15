@@ -130,3 +130,12 @@
   height: auto;
   border-radius: 8px;
 }
+@media (max-width: 768px) {
+    .select{
+        flex-direction: column;
+    }
+    .select .main, .select .content{
+        width: 100%;
+        float: none;
+    }
+}
