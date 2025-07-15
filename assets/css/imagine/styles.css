@@ -306,5 +306,41 @@
       gap: 10px;
       padding: 10px 10px;
     }
+    .section, .section.reverse, main {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .about-image {
+    order: -1;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .section div,
+  main div {
+    padding: 10px;
+  }
+
+  .section {
+    gap: 10px;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+  }
+
+  .endline-content {
+    flex-wrap: wrap;
+  }
+
+  .trunque-products .product-grid {
+    flex-direction: column !important;
+  }
+
+  .trunque-products .product-item {
+    width: 100%;
+    max-width: 320px;
+    margin: 10px auto;
+  }
   }
   
