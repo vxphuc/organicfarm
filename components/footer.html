@@ -20,10 +20,15 @@
     .footer {
       background-color: white;
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
       padding: 20px;
-      width: 100%;
       gap: 20px;
+    }
+
+    .footer-section {
+      flex: 1 1 20%;
+      min-width: 220px;
     }
 
     .footer h4 {
@@ -48,26 +53,6 @@
       color: rgb(245, 130, 30);
     }
 
-    .footer-bottom {
-      font-size: 12px;
-      color: #777;
-      margin: 20px 12px 0;
-      border-top: 1px solid #ddd;
-      padding-top: 10px;
-      text-align: center;
-    }
-
-    .footer-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .footer-col {
-      flex: 1 1 50%;
-      min-width: 250px;
-    }
-
     .partners {
       display: flex;
       flex-wrap: wrap;
@@ -81,61 +66,68 @@
       margin: 5px;
     }
 
-    /* Responsive: hình ảnh xuống hàng khi thiếu chỗ */
+    .footer-bottom {
+      font-size: 12px;
+      color: #777;
+      margin: 20px 12px 0;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+      text-align: center;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
-      .footer-row {
+      .footer {
+        flex-direction: row;
         flex-wrap: wrap;
       }
 
-      .footer-col {
+      .footer-section {
         flex: 1 1 45%;
-      }
-
-      .partners {
-        justify-content: flex-start;
       }
     }
 
+    @media (max-width: 480px) {
+      .footer-section {
+        flex: 1 1 100%;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="footer container">
 
-    <!-- Row 1: Tổng đài & Về nông trại -->
-    <div class="footer-row">
-      <div class="footer-col footer-left">
-        <h4>Tổng đài hỗ trợ</h4>
-        <p><strong>SĐT:</strong> <a href="tel:0934763069">0934763069</a></p>
-        <p><strong>Gmail:</strong> <a href="mailto:leminhha200969@gmail.com">leminhha200969@gmail.com</a></p>
-      </div>
-      <div class="footer-col footer-right">
-        <h4>Về Nông Trại</h4>
-        <a href="../index.html">Giới Thiệu ORGANICFARM</a>
-        <p><a href="#">Tuyển dụng</a></p>
-        <p><a href="#">Gửi góp ý, khiếu nại</a></p>
-      </div>
+    <div class="footer-section footer-left">
+      <h4>Tổng đài hỗ trợ</h4>
+      <p><strong>SĐT:</strong> <a href="tel:0934763069">0934763069</a></p>
+      <p><strong>Gmail:</strong> <a href="mailto:leminhha200969@gmail.com">leminhha200969@gmail.com</a></p>
     </div>
 
-    <!-- Row 2: Sản phẩm & Đối tác -->
-    <div class="footer-row">
-      <div class="footer-col">
-        <h4>Sản Phẩm</h4>
-        <p>Phân Trùng Quế</p>
-        <p>Sinh Khối Trùng Giống</p>
-        <p>Trùn Thịt</p>
-        <p>Sâu Canxi</p>
-        <p>Heo Rừng Lai</p>
-        <p>Gà Thả Vườn</p>
-      </div>
-      <div class="footer-col">
-        <h4>Thông tin đối tác</h4>
-        <div class="partners">
-          <a href="https://www.robertet.com/en/accueil-en/"><img src="../anh/rober.jpg" alt="Partner Logo 1"></a>
-          <a href="https://concung.com/"><img src="../anh/ali.jpg" alt="Partner Logo 2"></a>
-          <a><img src="../anh/sia.jpg" alt="Partner Logo 3"></a>
-          <a><img src="../anh/shoppe.jpg" alt="Partner Logo 4"></a>
-          <a><img src="../anh/logo201-01.jpg" alt="Partner Logo 5"></a>
-        </div>
+    <div class="footer-section footer-right">
+      <h4>Về Nông Trại</h4>
+      <a href="../index.html">Giới Thiệu ORGANICFARM</a>
+      <p><a href="#">Tuyển dụng</a></p>
+      <p><a href="#">Gửi góp ý, khiếu nại</a></p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Sản Phẩm</h4>
+      <p>Phân Trùng Quế</p>
+      <p>Sinh Khối Trùng Giống</p>
+      <p>Trùn Thịt</p>
+      <p>Sâu Canxi</p>
+      <p>Heo Rừng Lai</p>
+      <p>Gà Thả Vườn</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Thông tin đối tác</h4>
+      <div class="partners">
+        <a href="https://www.robertet.com/en/accueil-en/"><img src="../anh/rober.jpg" alt="Partner Logo 1"></a>
+        <a href="https://concung.com/"><img src="../anh/ali.jpg" alt="Partner Logo 2"></a>
+        <a><img src="../anh/sia.jpg" alt="Partner Logo 3"></a>
+        <a><img src="../anh/shoppe.jpg" alt="Partner Logo 4"></a>
+        <a><img src="../anh/logo201-01.jpg" alt="Partner Logo 5"></a>
       </div>
     </div>
 
