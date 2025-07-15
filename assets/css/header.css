@@ -102,7 +102,21 @@
 .header222 .menu.show {
     display: block !important;
 }
-@media (max-width: 740px) {
+.header222 .menu ul li.has-submenu .submenu {
+    display: none;
+    position: absolute;
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    min-width: 160px;
+}
+@media (min-width: 769px) {
+    .header222 .menu ul li.has-submenu:hover .submenu {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
     .header111 {
         display: none !important;
     }
@@ -144,5 +158,27 @@
     }
     .header222 .menu ul li:last-child {
         border-bottom: none;
+    }
+    .header222 .menu ul li.has-submenu .arrow {
+        float: right;
+        margin-left: 5px;
+        font-size: 0.9em;
+    }
+
+    .header222 .menu ul li.has-submenu .submenu-toggle {
+        display: block;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .header222 .menu ul li.has-submenu.open .submenu {
+        display: block;
+        background: #fafafa;
+        border-left: 2px solid #ccc;
+        padding-left: 15px;
+    }
+
+    .header222 .menu ul li.has-submenu > a {
+        display: none; /* ẩn thẻ <a> nếu còn */
     }
 }

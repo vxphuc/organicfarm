@@ -294,5 +294,13 @@
     .endline-content {
       flex-wrap: wrap;
     }
+    .trunque-products .product-grid{
+      flex-direction: column !important;
+    }
+    .trunque-products .product-item {
+      width: 100%;
+      max-width: 320px;
+      margin: 10px auto;
+    }
   }
   

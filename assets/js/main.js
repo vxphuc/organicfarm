@@ -143,3 +143,19 @@ document.addEventListener("DOMContentLoaded", function () {
     appearOnScroll.observe(section);
   });
 });
+const observer = new MutationObserver(() => {
+  const submenuToggles = document.querySelectorAll(".submenu-toggle");
+
+  submenuToggles.forEach(toggle => {
+    toggle.addEventListener("click", function () {
+      if (window.innerWidth <= 768) {
+        this.parentElement.classList.toggle("open");
+      }
+    });
+  });
+});
+
+const headerEl = document.getElementById("header-placeholder");
+if (headerEl) {
+  observer.observe(headerEl, { childList: true });
+}
