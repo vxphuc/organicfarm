@@ -30,7 +30,7 @@ const data = {
       const div = document.createElement("div");
       div.className = "main";
       div.innerHTML = `
-        <a href="pages/resources/detailnew.html?slug=${news.slug}">
+        <a href="../../pages/resources/detailnew.html?slug=${news.slug}">
           <img src="${imgSrc}" alt="Ảnh tin tức" class="img">
           <div class="text">
             <h3>${news.title || ""}</h3>
