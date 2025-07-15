@@ -24,7 +24,7 @@
             <p>Thông tin sản phẩm là loại đá gờ hẹp có bảng màu ấm áp gồm màu xám trung tính, 
                 rượu vang và chút màu mơ, hoàn hảo cho phong cách xếp chồng
                 khô, chặt chẽ. Có loại góc.</p>
-            <div class="product-grid">
+            <!-- <div class="product-grid">
                 <div class="product-item">
                     <img src="../../assets/img/anh/sữa tổ yến 1.png" alt="Ảnh sản phẩm" />
                 </div>
@@ -34,21 +34,47 @@
                 <div class="product-item">
                     <img src="../../assets/img/anh/sữa tổ yến 1.png" alt="Ảnh sản phẩm" />
                 </div>
-            </div>
-            <button class="btn">Tìm đường đến</button>
+            </div> -->
+            <button class="btn" onclick="window.location.href='../../pages/map/index.html'">Tìm đường đến</button>
         </div>
     </div>
     <nav class="related-products">
         <h1>Sản phẩm liên quan</h1>
-        <div class="product-list">
-            <img src="../../assets/img/anh/sữa tổ yến 1.png" alt="Ảnh sản phẩm" />
-            <img src="../../assets/img/anh/sữa tổ yến 1.png" alt="Ảnh sản phẩm" />
-            <img src="../../assets/img/anh/sữa tổ yến 1.png" alt="Ảnh sản phẩm" />
-            <img src="../../assets/img/anh/sữa tổ yến 1.png" alt="Ảnh sản phẩm" />
-            <img src="../../assets/img/anh/sữa tổ yến 1.png" alt="Ảnh sản phẩm" />
+        <div class="product-list" id="related-products">
+            <!-- Sản phẩm liên quan sẽ được render tại đây -->
         </div>
     </nav>
     <script src="../../assets/js/header/main.js"></script>
-    
+    <script src="../../assets/js/product/product-data.js"></script>
+    <script>
+        // Lấy ID từ URL
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+
+        // Tìm sản phẩm trong danh sách
+        const product = products.find(p => p.id === id);
+
+        if (product) {
+            document.querySelector(".main img").src = product.image;
+            document.querySelector(".main img").alt = product.name;
+            document.querySelector(".main h1").textContent = product.name;
+            document.querySelector(".content p").textContent = product.description;
+            const related = products.filter(p => p.category === product.category && p.id !== product.id);
+            const relatedContainer = document.getElementById("related-products");
+            if (related.length > 0) {
+            relatedContainer.innerHTML = related.map(p => `
+                <div class="product-item" style="cursor:pointer;" onclick="location.href='detailproduct.html?id=${p.id}'">
+                <img src="${p.image}" alt="${p.name}" />
+                <h4>${p.name}</h4>
+                </div>
+            `).join('');
+            } else {
+            relatedContainer.innerHTML = "<p>Không có sản phẩm liên quan.</p>";
+            }
+        } else {
+            document.querySelector(".select").innerHTML = "<h2>Sản phẩm không tồn tại!</h2>";
+        }
+    </script>
+
 </body>
 </html>

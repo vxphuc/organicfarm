@@ -107,14 +107,27 @@
     overflow-x: auto;
     padding: 10px 15px;
     scroll-behavior: smooth;
+    justify-content: space-evenly;
     -webkit-overflow-scrolling: touch;
 }
 .related-products .product-list img {
     flex: 0 0 auto;
-    width: 25%;
+    width: 100%;
     height: auto;
     border-radius: 10px;
 }
 .related-products .product-list::-webkit-scrollbar {
   display: none;
+}
+.product-item {
+  display: inline-block;
+  width: 180px;
+  margin: 10px;
+  text-align: center;
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }

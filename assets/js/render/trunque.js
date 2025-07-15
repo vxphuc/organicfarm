@@ -3,10 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!trunqueGrid) return;
 
   const trunqueProducts = products.filter(p => p.category === 'trunque');
-
+  const isGitHubPages = window.location.hostname === "vxphuc.github.io";
+  const basePath = isGitHubPages ? "/organicfarm/pages/product/" : "/pages/product/";
   trunqueGrid.innerHTML = trunqueProducts.map(product => `
     <div class="product-item">
-      <a href="./pages/product/detailproduct.html" style="text-decoration: none;">
+      <a href="${basePath}detailproduct.html?id=${product.id}" style="text-decoration: none;">
         <img src="${product.image}" alt="${product.name}">
         <h3>${product.name}</h3>
       </a>
