@@ -44,15 +44,15 @@
             </div>
             <img src="../../assets/img/anh/home004.png" alt="About Us" class="about-image">
         </main>
-        <section class="trunque-products fade-in-section" style="text-align: center;">
+        <!-- <section class="trunque-products fade-in-section" style="text-align: center;">
             <div class="container">
                 <h2>SẢN PHẨM TRÙN QUẾ</h2>
                 <div class="product-grid" id="trunque-product-grid">
-                <!-- Sản phẩm trùn quế sẽ được render tại đây -->
                 </div>
                 <a class="buton-item" id="view-all-products" href="#">Xem Tất Cả Sản Phẩm</a>
             </div>
-        </section>
+        </section> -->
+        <div id="product-section-list" class="fade-in-section"></div>
         <main class="section fade-in-section">
             <img src="../../assets/img/anh/DSC01382.jpg" alt="About Us" class="about-image">
             <div>
@@ -95,7 +95,7 @@
         </div>
     </div>
     <footer>
-        <iframe src="../../components/footer.html" width="100%" height="400px" style="border:none;"></iframe>
+        <iframe src="../../components/footer.html" width="100%" height="300px" style="border:none;"></iframe>
     </footer>
     <script src="../../../assets/js/scrollToTop/scrollToTop.js"></script>
     <script src="assets/js/product/product-data.js"></script>
@@ -116,6 +116,7 @@
 
         link.setAttribute("href", correctHref);
     });
+    const container = document.getElementById("product-section-list");
     </script>
 </body>
 </html>

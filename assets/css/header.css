@@ -78,7 +78,8 @@
     min-width: 160px;
 }
 .header222 .menu ul li .submenu li {
-    margin: 5px 0;
+    margin: 4px 0;
+    border-bottom: 1px solid;
 }
 .header222 .menu ul li:hover .submenu{
     display: block;
@@ -90,6 +91,7 @@
     white-space: nowrap;
     display: block;
     padding: 5px 10px;
+    justify-self: left;
 }
 .submenu li{
     width: 100%;
