@@ -164,7 +164,7 @@
 }
 
 /* Dưới 400px: 1 tin tức mỗi hàng */
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .main-content {
     flex-direction: column;
     align-items: center;
