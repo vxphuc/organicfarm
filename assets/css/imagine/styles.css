@@ -268,11 +268,11 @@
 
 .section.reverse {
   flex-direction: row;
-  padding: 30px 0px;
+  padding: 40px 20px;
 }
 
 .section img {
-    max-width: 600px;
+  max-width: 600px;
   width: 38%;
   height: auto;
   border-radius: 10px;
@@ -298,6 +298,9 @@
           text-align: center;
           
       }
+      .section.reverse{
+        padding: 10px 10px;
+      }
       .section{flex-wrap: wrap;}
       .about-image {
           margin-bottom: 20px;
@@ -307,6 +310,12 @@
   
   
   @media (max-width: 768px) {
+    .section img{
+      width: 80%;
+    }
+    .section div {
+      width: 90%;
+    }
     main {
       flex-direction: column;
     }
