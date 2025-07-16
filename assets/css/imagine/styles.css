@@ -311,10 +311,14 @@
   
   @media (max-width: 768px) {
     .section img{
-      width: 80%;
+      width: 100%;
     }
     .section div {
-      width: 90%;
+      width: 100%;
+    }
+    .section p{
+      font-size: 1em;
+      text-align: justify;
     }
     main {
       flex-direction: column;
