@@ -124,7 +124,7 @@
     color: black;
   }
   .endline {
-    background: rgb(67, 158, 79);
+    background: rgb(13,127,64);
     padding: 40px 20px;
     text-align: center;
     color: #fff;
@@ -170,7 +170,7 @@
   }
   
   .endline-btn {
-    background-color: green;
+    background-color: rgb(13,127,64);
     color: white;
     font-weight: bold;
     border: none;
