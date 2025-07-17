@@ -264,6 +264,7 @@ body{
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     position: relative;
+    margin: 0px 15px;
 }
 
 .product-item {

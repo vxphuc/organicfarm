@@ -13,7 +13,6 @@ function renderProductSections() {
             <h1>${product.name}</h1>
             <p>${product.description}</p>
             <a href="${basePath}detailproduct.html?id=${product.id}">
-            <button class="btn">Xem chi tiết</button>
             </a>
         </div>
       </main>
@@ -22,6 +21,6 @@ function renderProductSections() {
 
   container.innerHTML = html;
 }
-
+            // <button class="btn">Xem chi tiết</button>
 // Gọi hàm khi DOM đã sẵn sàng
 document.addEventListener("DOMContentLoaded", renderProductSections);
