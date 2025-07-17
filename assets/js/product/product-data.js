@@ -50,7 +50,7 @@ const products = [
   },
   {
     id: "8",
-    name: "sinh khối trùn giống",
+    name: "Sinh Khối Trùn Giống",
     category: "trunque",
     image: "../../assets/img/anh/DSC01384.jpg",
     description: "Sinh Khối Trùng Giống giúp xử lý chất thải hữu cơ, cung cấp phân bón giàu dinh dưỡng cho cây trồng, và là nguồn thức ăn bổ dưỡng cho gia súc, gia cầm, và thủy hải sản."
