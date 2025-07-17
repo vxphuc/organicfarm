@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     background-color: #f0f0f0;
     color: #333;
 }
@@ -194,7 +194,7 @@ body{
   letter-spacing: 0.05em;
 }
 .content a{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-decoration: none;
   display: inline-block;
 }
@@ -295,10 +295,10 @@ body{
     text-align: center;
     padding: 10px 20px;
     text-decoration: none;
-    background-color: #07ae20;
+    background-color: rgb(13,127,64);
     color: white;
     font-weight: bold;
-    border: 2px solid #07ae20;
+    border: 2px solid rgb(13,127,64);
     border-radius: 5px;
     transition: 0.3s;
     grid-column: 1 / -1; /* trải dài toàn hàng */

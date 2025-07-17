@@ -7,7 +7,7 @@
   body {
     width: 100%;
     margin: 0 auto;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: #333;
     background-color: #fff;
   }
@@ -89,7 +89,8 @@
   min-height: 40px; /* 2 dòng, tương đương 2 * 24px */
 }
 .text p {
-  min-height: 84px; /* 4 dòng, tương đương 4 * 21px */
+  min-height: 76px;
+  max-height: 76px;
   margin-top: 8px;
   flex-grow: 1;
 }
