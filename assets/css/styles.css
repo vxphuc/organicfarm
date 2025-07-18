@@ -384,7 +384,7 @@ body{
 
 .cta-section {
     text-align: center;
-    padding: 60px;
+    padding: 60px 0px;
     background-color: rgb(13,127,64);
     color: #fff;
 }
@@ -398,7 +398,7 @@ body{
     margin-bottom: 50px;
 }
 .cta-section .container h2{
-    font-size: 2em;
+    font-size: 1.8em;
     margin-bottom: 20px;
     color: #fff;
 }
