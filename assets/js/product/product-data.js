@@ -32,7 +32,7 @@ const products = [
     name: "Nuôi Cá",
     category: "channuoi",
     image: "../../assets/img/anh/nuoica.png",
-    description: " Cá nuôi là một nguồn cung cấp thực phẩm quan trọng, cung cấp hàm lượng protein và dưỡng chất cần thiết cho sức khỏe con người"
+    description: " Cá nuôi là một nguồn cung cấp thực phẩm quan trọng, cung cấp hàm lượng protein và dưỡng chất cần thiết cho sức khỏe con người."
   },
   {
     id: "6",
