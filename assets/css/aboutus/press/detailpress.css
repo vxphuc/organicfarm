@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    text-align: justify;
 }
 
 .detailpress-title{
@@ -40,4 +41,12 @@
 .detailpress-main p{
     margin: 10px 0;
     line-height: 1.5;
+}
+@media (max-width: 768px){
+    .detailpress-title{
+        width: 90%;
+    }
+    .detailpress-content{
+        width: 90%;
+    }
 }
