@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
             font-size: 24px;
             border: none;
             outline: none;
-            background-color: #1eb11e;
+            background-color: rgb(13, 127, 64);
             color: white;
             cursor: pointer;
             padding: 10px 16px;

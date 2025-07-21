@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     featuredGrid.innerHTML = latestProducts.map(product => `
       <div class="product-item">
         <img src="${product.image}" alt="${product.name}">
-        <h3>${product.name}</h3>
+        <h3 style="color: rgb(13, 127, 64);">${product.name}</h3>
       </div>
     `).join('');
   }
