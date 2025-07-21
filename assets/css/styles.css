@@ -434,6 +434,7 @@ body{
     max-width: 500px;
     text-align: left;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    justify-items: center;
   }
   
   .resource-box h4 {
@@ -526,9 +527,10 @@ body{
   cursor: pointer;
   border-radius: 5px;
   font-weight: bold;
+  color: #a0672a;
 }
 .tab-btn.active {
-  background-color: #109d1b;
+  background-color: rgb(13, 127, 64);
   color: white;
 }
 .tab-content {
@@ -637,11 +639,19 @@ body{
 }
 
   @media (max-width: 768px) {
+    .about-section .container h2{
+      text-align: center;
+    }
+    .about-section .container h3{
+      text-align: center;
+      margin-left: 0%;
+    }
     .tabs{
       width: 100%;
     }
     .tab-btn{
       width: 100%;
+      color: #a0672a;
     }
     .content-buttons {
     flex-direction: column; /* Trên điện thoại thì xếp theo cột */

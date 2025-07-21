@@ -9,6 +9,7 @@
     text-align: center;
     display: flex;
     font-weight: 700;
+    justify-content: space-between;
 }
 .header111 img{
     float: left;
