@@ -14,7 +14,7 @@ form.addEventListener('submit', async function (e) {
   const data = new FormData(form);
 
   // Gửi form đến Formspree
-  const response = await fetch('https://formspree.io/f/mnnvgayg', {
+  const response = await fetch('https://formspree.io/f/xblkydje', {
     method: 'POST',
     body: data,
     headers: {
